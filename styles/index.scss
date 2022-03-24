@@ -1,0 +1,145 @@
+$PaleBlue: hsl(225, 100%, 94%);
+$BrightBlue: hsl(245, 75%, 52%);
+$VeryPaleBlue: hsl(225, 100%, 98%);
+$DesaturatedBlue: hsl(224, 23%, 55%);
+$DarkBlue: hsl(223, 47%, 23%);
+$hover: hsl(245, 83%, 68%);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 16px;
+}
+.background {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(hsla(225, 100%, 98%, 0.1),  hsla(225, 100%, 98%, 0.1)),url("../images/pattern-background-mobile.svg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    .card {
+        background: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 319px;
+        height: 569px;
+        border-radius: 20px;
+        img {
+            width: 100%;
+            border-radius: 20px 20px 0 0;
+        }
+        .content {
+            padding: 30px 20px;
+            h1 {
+                font-size: 23px;
+                font-weight: 900;
+                color: $DarkBlue;
+                margin-bottom: 20px;
+            }
+            p {
+                color: $DesaturatedBlue;
+                text-align: center;
+                letter-spacing: 0.5px;
+                font-weight: 500;
+                line-height: 24px;
+            }
+            .plan-type {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background: $VeryPaleBlue;
+                border-radius: 5px;
+                height: 80px;
+                padding: 0 20px;
+                margin: 30px 0;
+                .plan-info {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: row;
+                    span {
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        h2 {
+                            color: $DarkBlue;
+                            font-weight: 900;
+                            font-size: 15px;
+                        }
+                        p {
+                            font-size: 15px;
+                        }
+                    }
+                    img {
+                        width: 50px;
+                        margin-right: 15px;
+                    }
+                }
+                a {
+                    font-weight: 900;
+                    font-size: 13px;
+                    transition: 0.2s;
+                    &:hover {
+                        color: $hover;
+                        text-decoration: none;
+                    }
+                }
+            }
+            .order-btns {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                .payment-btn {
+                    width: 100%;
+                    height: 50px;
+                    font-weight: 900;
+                    background: $BrightBlue;
+                    border-radius: 10px;
+                    color: #fff;
+                    text-decoration: none;
+                    padding: 15px 0;
+                    transition: 0.3s;
+                    &:hover {
+                        background: $hover;
+                    }
+                }
+                .cancel-btn {
+                    text-decoration: none;
+                    color: $DesaturatedBlue;
+                    font-weight: 900;
+                    margin-top: 25px;
+                    transition: 0.3s;
+                    &:hover {
+                        color: $DarkBlue;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:800px) { 
+	.background {
+        background-position: center;
+        background-size: cover;
+        background-image: url("../images/pattern-background-desktop.svg");
+    }
+    .card {
+        p {
+            font-size: 14px;
+        }
+        .content {
+            padding: 0;
+            h1 {
+                margin-bottom: 2px;
+            }
+        }
+        .cancel-btn, .payment-btn{
+            font-size: 14px;
+        }
+    }
+}
